@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Piko Assignment Marketplace</title>
+  <link rel="stylesheet" href="piko.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-group">
+      <div class="brand-mark">P</div>
+      <div>
+        <h1>Piko</h1>
+        <p>Assignment marketplace for students.</p>
+      </div>
+    </div>
+    <button class="cart-toggle" id="cartToggle">
+      Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main class="page-body">
+    <section class="hero-panel">
+      <div>
+        <p class="eyebrow">Ready to buy</p>
+        <h2>Find completed assignments in minutes.</h2>
+        <p>Browse vetted solutions, compare subjects, and add work directly to your cart.</p>
+        <div class="hero-actions">
+          <button id="scrollProducts">Browse assignments</button>
+          <button id="checkoutNow">Checkout</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <span>Featured</span>
+          <strong>$24.99</strong>
+        </div>
+        <h3>Machine Learning Report</h3>
+        <p>Complete ML write-up with code examples and evaluation charts.</p>
+      </div>
+    </section>
+
+    <section class="search-panel">
+      <div class="search-field">
+        <label for="searchInput">Search assignments</label>
+        <input id="searchInput" type="search" placeholder="Search subject, title, or deadline" />
+      </div>
+      <div class="search-field">
+        <label for="subjectSelect">Subject</label>
+        <select id="subjectSelect">
+          <option value="all">All subjects</option>
+        </select>
+      </div>
+      <div class="search-field">
+        <label for="levelSelect">Level</label>
+        <select id="levelSelect">
+          <option value="all">All levels</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="product-grid" id="productList"></section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <div>
+        <h2>Your Cart</h2>
+        <p>Review items before checkout.</p>
+      </div>
+      <button id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div>
+        <span>Total</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button id="checkoutButton" class="checkout-button">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">Added to cart</div>
+  <script src="piko.js"></script>
+</body>
+</html>
