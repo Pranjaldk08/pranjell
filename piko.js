@@ -103,6 +103,13 @@ function updateCartCount() {
   cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
 }
 
+function updateCheckoutVisibility() {
+  const shouldShowCheckout = cart.length > 0;
+  checkoutButtons.forEach((button) => {
+    button.hidden = !shouldShowCheckout;
+  });
+}
+
 function calculateTotal() {
   return cart.reduce((sum, item) => sum + item.quantity * item.price, 0);
 }
@@ -129,6 +136,7 @@ function renderCart() {
 
   cartTotal.textContent = formatPrice(calculateTotal());
   updateCartCount();
+  updateCheckoutVisibility();
 }
 
 function addToCart(assignmentId) {
